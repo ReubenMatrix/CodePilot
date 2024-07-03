@@ -7,7 +7,7 @@ const apiUrl = 'http://localhost:3000/api/v1/checkout';
 
 function Courses() {
     const makePayment = async (course) => {
-        const stripe = await loadStripe('pk_test_51OTiUiSHP9ZrcJJCm9HdnbMVBMcb1kYnpwiiFUL138WDR8alGg8K5sHJGSSGowZTdXK4UtM5QStJOfGgM5ecVYHW00mVoi6cpU');
+        const stripe = await loadStripe(STRIPE_PUBLISHABLE_KEY);
 
         const body = {
             courseId: course.id,

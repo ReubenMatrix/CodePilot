@@ -1,5 +1,5 @@
 const express = require('express');
-const stripe = require('stripe')('sk_test_51OTiUiSHP9ZrcJJCjPL4qUKKV3B9V5GIrfmLJQAgyq1OQErwFfNw6LlJwJGZZAQobd40hKhcxHIs8DAYyZosq6JZ00rheE1KvG');
+const stripe = require('stripe')(STRIPE_SECRET_KEY);
 const router = express.Router();
 
 router.post('/create-checkout-session', async (req, res) => {
@@ -19,8 +19,8 @@ router.post('/create-checkout-session', async (req, res) => {
                 quantity: 1,
             }],
             mode: 'payment',
-            success_url: 'http://localhost:5173/success', // Replace with your actual success URL
-            cancel_url: 'http://localhost:5173/failed', // Replace with your actual cancel URL
+            success_url: 'http://localhost:5173/success', 
+            cancel_url: 'http://localhost:5173/failed',
         });
 
         res.json({ sessionId: session.id });
