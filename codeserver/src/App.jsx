@@ -13,10 +13,11 @@ import Solving from './pages/Solving'
 import Courses from './pages/Courses'
 import Success from './pages/Success'
 import Failed from './pages/Failed'
+import NewProblem from './pages/NewProblem'
+
+
 
 function App() {
-
-
   return (
     <div>
     <UsercontextProvider>
@@ -33,10 +34,10 @@ function App() {
         <Route path='/courses' element={<Courses/>}/>
         <Route path='/success' element={<Success/>}/>
         <Route path='/failed' element={<Failed/>}/>
+        <Route path='/add-problem' element={<NewProblem/>}/>
       </Routes>
     </BrowserRouter>
     </UsercontextProvider>
-     
     </div>
 
   )
